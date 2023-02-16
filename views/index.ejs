@@ -1,0 +1,41 @@
+<%- include('./partials/head.ejs') %>
+
+<main>
+  <h1 class="title"><%= squad.name %></h1>
+
+  <ul>
+    <li><strong>ID:</strong> <%= squad.id %></li>
+    <li><strong>Slug:</strong> <%= squad.slug %></li>
+  </ul>
+
+  <hr color="black" />
+  <a href="/?squad=squad-a-2022" class="btn btn-border-3">Squad A</a>
+  <a href="/?squad=squad-b-2022" class="btn btn-border-3">Squad B</a>
+  <a href="/?squad=squat-c-2022" class="btn btn-border-3">Squad C</a>
+
+  <hr color="black" />
+
+  <!-- <a href="/?squad=<%= squad.slug %>&orderBy=name">Sorteer op naam</a>
+  <hr /> -->
+
+  <section>
+    <!-- Hier komen de members -->
+    <% squad.members.forEach(member => { %>
+    <article>
+      <% if (member.avatar) { %>
+      <img src="<%= member.avatar %>" alt="De avatar van <%= member.name %>" />
+      <% }else{ %>
+      <img src="/placeholder.jpg" alt="Placeholder avatar" />
+      <% } %>
+      <h2><%= member.name %> <%= member.surname %></h2>
+      <!-- <% if(member.gitHubHandle) { %>
+        <h3>github: <%= member.gitHubHandle %></h3>
+    <% } else { %>
+        <p><span>ERROR 404</span></p>
+    <% } %> -->
+    </article>
+    <% }) %>
+  </section>
+</main>
+
+<%- include('./partials/foot.ejs') %>

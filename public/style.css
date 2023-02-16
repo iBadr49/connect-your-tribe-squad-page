@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:root {
+  --c-turquoise: #66e5bf;
+  --c-lavender: #a675f5;
+  --c-blueberry: #050542;
+  --c-white: white;
+  --c-black: black;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: Helvetica, Arial, sans-serif;
+  background: var(--c-turquoise);
+}
+
+main section {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  justify-content: space-evenly;
+}
+
+.title {
+  text-align: center;
+}
+
+h1.title {
+  margin-top: 5px;
+  position: relative;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  font-size: 50px;
+  justify-items: center;
+  color: var(--c-black);
+}
+
+h1.title::after {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 4px;
+  left: calc(50% - 25px);
+  bottom: 0;
+  background: var(--c-blueberry);
+}
+
+ul li {
+  list-style: none;
+}
+
+/* ------- Squad Buttons -------- */
+
+.btn {
+  position: relative;
+  display: inline-block;
+  margin: 15px;
+  padding: 12px 27px;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--c-white);
+  background: var(--c-blueberry);
+  border: 3px solid var(--c-lavender);
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  -webkit-transition: ease-out 0.5s;
+  -moz-transition: ease-out 0.5s;
+}
+
+.btn.btn-border-3::after,
+.btn.btn-border-3::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  transition: 0.5s;
+}
+
+.btn.btn-border-3::after {
+  top: -9px;
+  left: -9px;
+  border-top: 3px solid transparent;
+  border-left: 3px solid transparent;
+}
+
+.btn.btn-border-3::before {
+  bottom: -9px;
+  right: -9px;
+  border-bottom: 3px solid transparent;
+  border-right: 3px solid transparent;
+}
+
+.btn.btn-border-3:hover {
+  color: var(--c-turquoise);
+}
+
+.btn.btn-border-3:hover::after,
+.btn.btn-border-3:hover::before {
+  width: 40px;
+  height: 40px;
+  border-color: var(--c-blueberry);
+}
+
+article {
+  position: relative;
+  margin-top: 1em;
+  width: 10rem;
+  height: 10rem;
+  padding: 1rem;
+  color: slate;
+  text-align: center;
+
+  /* From https://css.glass */
+  color: var(--c-white);
+  background: var(--c-blueberry);
+  border-radius: 2rem;
+  box-shadow: 0 4px 30px var(--c-lavender);
+  backdrop-filter: blur(5.8px);
+  -webkit-backdrop-filter: blur(5.8px);
+  border: 1px solid rgba(255, 255, 255, 0.27);
+}
+
+article h2 {
+  font-size: 1rem;
+  font-weight: normal;
+}
+article img {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+}
+article a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 2rem;
+  display: block;
+}
+article a:hover {
+  background: #fff2;
+}
+article a span {
+  display: none;
+}
