@@ -27,10 +27,10 @@ Een live-coded voorbeeld van een overzichtspagina gemaakt met Express.js en EJS,
 
 ## Bronnen
 
-https://expressjs.com/en/4x/api.html
-https://ejs.co/
-https://www.npmjs.com/package/dotenv
-https://whois.fdnd.nl/docs/squad#slug
+https://expressjs.com/en/4x/api.html <br>
+https://ejs.co/ <br>
+https://www.npmjs.com/package/dotenv <br>
+https://whois.fdnd.nl/docs/squad#slug <br>
 
 ## Licentie
 
