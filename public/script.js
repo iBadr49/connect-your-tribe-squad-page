@@ -1,3 +1,5 @@
+
+// Deze code is voor mijn INFO pop-Up
 const allTriggers = document.querySelectorAll('.id-card-trigger')
 
 console.log(allTriggers);
