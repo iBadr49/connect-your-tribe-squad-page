@@ -17,9 +17,8 @@
       <!-- Member "naam" -->
       <p><%= member.name %> <%= member.surname %></p>
     </article>
-
+    <!-- Dialog waarin alle gegevens van een bepaalde member worden weergegeven. -->
     <dialog class="card" id="<%= member.id %>">
-      
       <div class="id-card-trigger">
         <% if (member.avatar) { %>
         <img
@@ -32,33 +31,39 @@
         <img src="/placeholder.jpg" alt="Placeholder avatar" />
         <% } %>
 
+        <!-- Hier roep ik de name/surname van een bepaalde member -->
         <h2><%= member.name %> <%= member.surname %></h2>
-        
+
         <div class="dialog-card">
-          <h3>INFO:</h3>
+          <h3>Details:</h3>
           <div class="info-member">
+            <!-- Hier haal ik weer wat gegevens uit de Api -->
             <p><strong>Role:</strong> <%= member.role %></p>
             <p><strong>ID:</strong> <%= member.id %></p>
             <p><strong>Slug:</strong> <%= member.slug %></p>
-            <p><strong>Git:</strong>
+            <p>
+              <strong>Git:</strong>
+              <!-- if statement als de member geen githubhandle heeft staan dan  krijg "Niet ingesteld" terug te staan -->
               <% if(member.gitHubHandle) { %>
               <span><%= member.gitHubHandle %></span>
               <% } else { %>
               <span>Niet ingesteld!</span>
               <% } %>
-              </p>
+            </p>
             <p>
-            <strong>Web:</strong>
+              <!-- if statement gebruikt, if de member geen website heeft dan krijg ik "else ... " terug  -->
+              <strong>Web:</strong>
               <% if(member.website) { %> <%= member.website %> <% } else { %>
               <span>Niet ingesteld!</span>
               <% } %>
-              </p>
+            </p>
             <p>
-            <strong>Bio:</strong>
+              <strong>Bio:</strong>
+              <!-- Als de member geen bio heeft in Api staan dan gebreurt er Else .. -->
               <% if(member.bio.html) { %> <%- member.bio.html %> <% } else { %>
               <span>Niet ingesteld!</span>
               <% } %>
-              </p>
+            </p>
           </div>
         </div>
       </div>

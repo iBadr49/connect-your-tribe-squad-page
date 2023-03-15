@@ -1,37 +1,27 @@
-import express from 'express'
+import express from "express";
 
-const url = 'https://whois.fdnd.nl/api/v1/squad/'
+// Dit haalt de Api gegevens op
+const url = "https://whois.fdnd.nl/api/v1/squad/";
 
-// Maak een nieuwe express app
-const app = express()
+// Creeren van een Express "app"
+const app = express();
 
-// Stel in hoe we express gebruiken
-app.set('view engine', 'ejs')
-app.set('views', './views')
-app.use(express.static('public'))
+// Configureert hoe ik Express kan gebruiken
+app.set("view engine", "ejs");
+app.set("views", "./views");
+app.use(express.static("public"));
 
-// Maak een route voor de index
-app.get('/', (request, response) => {
-  console.log(request.query.squad)
+// Maakt een path/route voor de index
+app.get("/", (request, response) => {
+  console.log(request.query.squad);
+  let slug = request.query.squad || "squad-a-2022";
+});
 
-  let slug = request.query.squad || 'squad-a-2022'
-  let orderBy = request.query.orderBy || 'name'
-  let squadUrl = url + slug + '?orderBy=' + orderBy + '&direction=ASC'
-
-  fetchJson(squadUrl).then((data) => {
-    response.render('index', data)
-  })
-})
-
-// app.get('/members', (request, response) => {
-//   response.send('Joepie!!')
-// })
-
-// Stel het poortnummer in en start express
-app.set('port', process.env.PORT || 1000)
-app.listen(app.get('port'), function () {
-  console.log(`Application started on http://localhost:${app.get('port')}`)
-})
+// Configureert op welke Poort express zal openen
+app.set("port", process.env.PORT || 1000);
+app.listen(app.get("port"), function () {
+  console.log(`Application started on http://localhost:${app.get("port")}`);
+});
 
 /**
  * Wraps the fetch api and returns the response body parsed through json
@@ -41,6 +31,5 @@ app.listen(app.get('port'), function () {
 async function fetchJson(url) {
   return await fetch(url)
     .then((response) => response.json())
-    .catch((error) => error)
+    .catch((error) => error);
 }
-
