@@ -1,4 +1,4 @@
-# Mijn Dynamische Squadpage
+# Dynamische Squadpage
 
 <img width="100%" alt="image" src="https://user-images.githubusercontent.com/112857932/223997626-e6bb1273-1bf1-4393-8b5e-40e37107fe3a.png">
 
