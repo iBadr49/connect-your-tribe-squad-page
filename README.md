@@ -1,4 +1,4 @@
-# Mijn Dynamische Squadpage
+# Dynamische Squadpage
 
 <img width="100%" alt="image" src="https://user-images.githubusercontent.com/112857932/223997626-e6bb1273-1bf1-4393-8b5e-40e37107fe3a.png">
 
@@ -36,7 +36,7 @@ app.listen(app.get("port"), function () {
 ```
 - **Express** is een framework voor node.js en maakt het eenvoudiger voor ontwikkelaars om webapplicaties te maken met Node.js. 
 
-```nodejs
+```node
 import express from "express";
 
 // Creeren van een Express "app"
@@ -51,7 +51,7 @@ app.use(express.static("public"));
 
 - **Ejs** staat voor Embedded JavaScript en zorgt dat functies van Js in het html kunnen geschreven worden.
 
-```ejs
+```js
 <!-- Hier komen de members -->
     <% squad.members.forEach(member => { %>
 
