@@ -51,7 +51,7 @@ app.use(express.static("public"));
 
 - **Ejs** staat voor Embedded JavaScript en zorgt dat functies van Js in het html kunnen geschreven worden.
 
-```node
+```js
 <!-- Hier komen de members -->
     <% squad.members.forEach(member => { %>
 
