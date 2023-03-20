@@ -13,12 +13,17 @@ app.use(express.static("public"));
 
 // Maakt een path/route voor de index
 app.get("/", (request, response) => {
-  console.log(request.query.squad);
   let slug = request.query.squad || "squad-a-2022";
+  let orderBy = request.query.orderBy || 'name';
+  let squadUrl = url + slug + '?orderBy=' + orderBy + '&direction=ASC';
+
+  fetchJson(squadUrl).then((data) => {
+    response.render('index', data);
+  })
 });
 
 // Configureert op welke Poort express zal openen
-app.set("port", process.env.PORT || 1000);
+app.set("port", process.env.PORT || 8000);
 app.listen(app.get("port"), function () {
   console.log(`Application started on http://localhost:${app.get("port")}`);
 });
